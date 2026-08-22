@@ -199,8 +199,6 @@
       justify-content: center;
       padding: 70px 35px;
       background: var(--cream);
-      height: 100vh;
-      overflow-y: scroll;
     }
 
     .signup-form-wrap {
@@ -416,6 +414,13 @@
       text-decoration: none;
     }
 
+    /* Large Screens only */
+    @media(min-width: 768px) {
+      .signup-form-area {
+        height: 100vh;
+        overflow-y: scroll;
+      }
+    }
     /* Mobile */
     @media (max-width: 980px) {
       .signup-page {
@@ -426,7 +431,6 @@
         min-height: auto;
         padding: 38px 28px;
       }
-
       .intro-content {
         margin: 45px 0;
       }

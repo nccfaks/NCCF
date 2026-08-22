@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>NCCF Akwa Ibom | Create an Account</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap"
+    rel="stylesheet"
+  />
+
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+  />
+  <link rel="stylesheet" href="signup.css" />
+ 
+</head>
+
+<body>
+  <main class="signup-page">
+    <aside class="signup-intro">
+      <a class="brand" href="index.html" aria-label="NCCF Akwa Ibom homepage">
+        <div class="brand-mark">
+            <img src="./images/nccf_logo.png" />
+        </div>
+
+        <div class="brand-text">
+          NCCF
+          <small>Akwa Ibom State</small>
+        </div>
+      </a>
+
+      <div class="intro-content">
+        <div class="intro-tag">
+          <i class="fa-solid fa-heart"></i>
+          Welcome to the family
+        </div>
+
+        <h1>
+          Your fellowship<br />
+          journey starts <span>here.</span>
+        </h1>
+
+        <p>
+          Create your profile and become part of a Christ-centred community
+          growing in faith, friendship, discipleship, and service.
+        </p>
+
+        <div class="intro-points">
+          <div class="intro-point">
+            <i class="fa-solid fa-check"></i>
+            Connect with fellow Christian corps members.
+          </div>
+
+          <div class="intro-point">
+            <i class="fa-solid fa-check"></i>
+            Receive fellowship updates and information.
+          </div>
+
+          <div class="intro-point">
+            <i class="fa-solid fa-check"></i>
+            Find opportunities to serve and grow spiritually.
+          </div>
+        </div>
+      </div>
+
+      <p class="intro-footer">
+        Nigerian Christian Corpers Fellowship, Akwa Ibom State.
+      </p>
+    </aside>
+
+    <section class="signup-form-area">
+      <div class="signup-form-wrap">
+        <header class="form-heading">
+          <h2>Create your account</h2>
+          <p>
+            Please complete the form below. Your information helps NCCF serve
+            and connect with you effectively.
+          </p>
+          <div class="required-note">
+            <span>*</span> All fields are required.
+          </div>
+        </header>
+
+        <form class="signup-form" id="signupForm" novalidate>
+          <!-- Personal Details -->
+          <section class="form-section">
+            <h3 class="form-section-title">
+              <i class="fa-solid fa-user"></i>
+              Personal details
+            </h3>
+
+            <div class="form-grid">
+              <div class="field full">
+                <label for="fullName">
+                  Full Name <span class="required">*</span>
+                </label>
+
+                <div class="input-wrap">
+                  <i class="fa-solid fa-user"></i>
+                  <input 
+                    class="input_pad"
+                    id="fullName"
+                    name="fullName"
+                    type="text"
+                    placeholder="Enter your full name"
+                    autocomplete="name"
+                    required
+                  />
+                </div>
+              </div>
+
+              <div class="field">
+                <label for="email">
+                  Email Address <span class="required">*</span>
+                </label>
+
+                <div class="input-wrap">
+                  <i class="fa-solid fa-envelope"></i>
+                  <input
+                    id="email"
+                    name="email"
+                    type="email"
+                    placeholder="you@example.com"
+                    autocomplete="email"
+                    required
+                    class="input_pad"
+                  />
+                </div>
+              </div>
+
+              <div class="field">
+                <label for="phone">
+                  Phone Number <span class="required">*</span>
+                </label>
+
+                <div class="input-wrap">
+                  <i class="fa-solid fa-phone"></i>
+                  <input
+                    id="phone"
+                    name="phone"
+                    type="tel"
+                    placeholder="08012345678"
+                    autocomplete="tel"
+                    inputmode="tel"
+                    pattern="(?:\+234|234|0)[789][01]\d{8}"
+                    title="Enter a valid Nigerian phone number, for example 08012345678 or +2348012345678."
+                    required
+                    class="input_pad"
+                  />
+                </div>
+
+                <small class="help-text">
+                  Example: 08012345678 or +2348012345678
+                </small>
+              </div>
+
+              <div class="field">
+                <label for="stateCode">
+                  State Code <span class="required">*</span>
+                </label>
+                <div class="input-wrap">
+                  <input
+                    id="stateCode"
+                    name="stateCode"
+                    type="text"
+                    placeholder="AK/25B/1371"
+                    autocomplete="off"
+                    autocapitalize="characters"
+                    maxlength="11"
+                    pattern="AK\/(?:25|26)[ABC]\/\d{4}"
+                    title="Use this exact format: AK/25A/1371, AK/25B/1371, AK/25C/1371, AK/26A/1371, AK/26B/1371, or AK/26C/1371."
+                    required
+                  />
+                </div>
+
+                <small class="state-code-hint">
+                  Format: AK/25B/1371
+                </small>
+              </div>
+
+              <div class="field">
+                <label for="stateOfOrigin">
+                  State of Origin <span class="required">*</span>
+                </label>
+
+                <div class="input-wrap">
+
+                  <select id="stateOfOrigin" name="stateOfOrigin" required>
+                    <option value="" selected disabled>Select state</option>
+                    <option value="Abia">Abia</option>
+                    <option value="Adamawa">Adamawa</option>
+                    <option value="Akwa Ibom">Akwa Ibom</option>
+                    <option value="Anambra">Anambra</option>
+                    <option value="Bauchi">Bauchi</option>
+                    <option value="Bayelsa">Bayelsa</option>
+                    <option value="Benue">Benue</option>
+                    <option value="Borno">Borno</option>
+                    <option value="Cross River">Cross River</option>
+                    <option value="Delta">Delta</option>
+                    <option value="Ebonyi">Ebonyi</option>
+                    <option value="Edo">Edo</option>
+                    <option value="Ekiti">Ekiti</option>
+                    <option value="Enugu">Enugu</option>
+                    <option value="FCT">Federal Capital Territory</option>
+                    <option value="Gombe">Gombe</option>
+                    <option value="Imo">Imo</option>
+                    <option value="Jigawa">Jigawa</option>
+                    <option value="Kaduna">Kaduna</option>
+                    <option value="Kano">Kano</option>
+                    <option value="Katsina">Katsina</option>
+                    <option value="Kebbi">Kebbi</option>
+                    <option value="Kogi">Kogi</option>
+                    <option value="Kwara">Kwara</option>
+                    <option value="Lagos">Lagos</option>
+                    <option value="Nasarawa">Nasarawa</option>
+                    <option value="Niger">Niger</option>
+                    <option value="Ogun">Ogun</option>
+                    <option value="Ondo">Ondo</option>
+                    <option value="Osun">Osun</option>
+                    <option value="Oyo">Oyo</option>
+                    <option value="Plateau">Plateau</option>
+                    <option value="Rivers">Rivers</option>
+                    <option value="Sokoto">Sokoto</option>
+                    <option value="Taraba">Taraba</option>
+                    <option value="Yobe">Yobe</option>
+                    <option value="Zamfara">Zamfara</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="field">
+                <label for="dob">
+                  Date of Birth <span class="required">*</span>
+                </label>
+
+                <div class="input-wrap">
+                  <input
+                    id="dob"
+                    name="dob"
+                    type="date"
+                    autocomplete="bday"
+                    required
+                  />
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Service Details -->
+          <section class="form-section">
+            <h3 class="form-section-title">
+              Service details
+            </h3>
+
+            <div class="form-grid">
+              <div class="field full">
+                <label for="ppa">
+                  Primary Place of Assignment <span class="required">*</span>
+                </label>
+
+                <div class="input-wrap">
+                  <input
+                    id="ppa"
+                    name="ppa"
+                    type="text"
+                    placeholder="Enter your PPA name"
+                    autocomplete="organization"
+                    required
+                  />
+                </div>
+              </div>
+
+              <div class="field full">
+                <label for="durationOfStay">
+                  Duration of Stay <span class="required">*</span>
+                </label>
+
+                <div class="input-wrap">
+
+                  <select id="durationOfStay" name="durationOfStay" required>
+                    <option value="" selected disabled>
+                      Select duration of stay
+                    </option>
+                    <option value="Less than 1 month">Less than 1 month</option>
+                    <option value="1 to 3 months">1 to 3 months</option>
+                    <option value="4 to 6 months">4 to 6 months</option>
+                    <option value="7 to 9 months">7 to 9 months</option>
+                    <option value="10 to 12 months">10 to 12 months</option>
+                    <option value="More than 12 months">More than 12 months</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Next of Kin -->
+          <section class="form-section">
+            <h3 class="form-section-title">
+              Next of kin details
+            </h3>
+
+            <div class="form-grid">
+              <div class="field">
+                <label for="nextOfKinName">
+                  Next of Kin Name <span class="required">*</span>
+                </label>
+
+                <div class="input-wrap">
+                  <input
+                    id="nextOfKinName"
+                    name="nextOfKinName"
+                    type="text"
+                    placeholder="Enter next of kin's name"
+                    autocomplete="off"
+                    required
+                  />
+                </div>
+              </div>
+
+              <div class="field">
+                <label for="nextOfKinPhone">
+                  Next of Kin Phone <span class="required">*</span>
+                </label>
+
+                <div class="input-wrap">
+                  <input
+                    id="nextOfKinPhone"
+                    name="nextOfKinPhone"
+                    type="tel"
+                    placeholder="08012345678"
+                    autocomplete="tel"
+                    inputmode="tel"
+                    pattern="(?:\+234|234|0)[789][01]\d{8}"
+                    title="Enter a valid Nigerian phone number, for example 08012345678 or +2348012345678."
+                    required
+                  />
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Account Security -->
+          <section class="form-section">
+            <h3 class="form-section-title">
+              Account security
+            </h3>
+
+            <div class="form-grid">
+              <div class="field full">
+                <label for="password">
+                  Password <span class="required">*</span>
+                </label>
+
+                <div class="input-wrap">
+
+                  <input
+                    id="password"
+                    name="password"
+                    type="password"
+                    placeholder="Create a secure password"
+                    autocomplete="new-password"
+                    minlength="8"
+                    pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,}"
+                    title="Password must be at least 8 characters and include an uppercase letter, lowercase letter, and number."
+                    required
+                  />
+
+                  <button
+                    class="password-toggle"
+                    id="passwordToggle"
+                    type="button"
+                    aria-label="Show password"
+                  >
+                    <i class="fa-regular fa-eye"></i>
+                  </button>
+                </div>
+
+                <small class="help-text">
+                  Use at least 8 characters, including an uppercase letter,
+                  lowercase letter, and a number.
+                </small>
+              </div>
+            </div>
+          </section>
+
+          <button class="submit-btn" type="submit">
+            Create My Account
+            <i class="fa-solid fa-arrow-right"></i>
+          </button>
+
+          <p class="form-footer-text">
+            By registering, you agree that NCCF Akwa Ibom State may use your
+            information for fellowship communication and administration.
+          </p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    const signupForm = document.querySelector("#signupForm");
+    const stateCodeInput = document.querySelector("#stateCode");
+    const passwordInput = document.querySelector("#password");
+    const passwordToggle = document.querySelector("#passwordToggle");
+
+    // Automatically capitalize the State Code as the user types.
+    stateCodeInput.addEventListener("input", (event) => {
+      event.target.value = event.target.value.toUpperCase();
+    });
+
+    // Toggle password visibility.
+    passwordToggle.addEventListener("click", () => {
+      const isPassword = passwordInput.type === "password";
+
+      passwordInput.type = isPassword ? "text" : "password";
+      passwordToggle.innerHTML = isPassword
+        ? '<i class="fa-regular fa-eye-slash"></i>'
+        : '<i class="fa-regular fa-eye"></i>';
+
+      passwordToggle.setAttribute(
+        "aria-label",
+        isPassword ? "Hide password" : "Show password"
+      );
+    });
+
+    signupForm.addEventListener("submit", (event) => {
+      event.preventDefault();
+
+      if (!signupForm.checkValidity()) {
+        signupForm.reportValidity();
+        return;
+      }
+
+      const submitButton = signupForm.querySelector(".submit-btn");
+      const originalText = submitButton.innerHTML;
+
+      submitButton.innerHTML =
+        '<i class="fa-solid fa-check"></i> Registration Successful';
+      submitButton.style.background = "#08704f";
+
+      // Connect this point to your API/backend before deploying.
+      // Example: fetch("/api/register", { method: "POST", body: new FormData(signupForm) })
+
+      setTimeout(() => {
+        submitButton.innerHTML = originalText;
+        submitButton.style.background = "";
+        signupForm.reset();
+      }, 3000);
+    });
+  </script>
+</body>
+</html>

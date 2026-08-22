@@ -1,0 +1,469 @@
+    :root {
+      --navy: #061a35;
+      --navy-2: #092951;
+      --blue: #1261b1;
+      --green: #15966e;
+      --green-dark: #08704f;
+      --mint: #e6f6ef;
+      --cream: #f8fbff;
+      --white: #ffffff;
+      --ink: #10233e;
+      --muted: #667085;
+      --border: #d8e2ee;
+      --danger: #c93434;
+      --shadow: 0 20px 60px rgba(6, 26, 53, 0.13);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      min-height: 100vh;
+      color: var(--ink);
+      background: var(--cream);
+      font-family: "DM Sans", sans-serif;
+    }
+
+    h1,
+    h2,
+    h3 {
+      font-family: "Manrope", sans-serif;
+    }
+
+    .signup-page {
+      display: grid;
+      min-height: 100vh;
+      grid-template-columns: 0.85fr 1.15fr;
+    }
+
+    /* Left introduction panel */
+    .signup-intro {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      /* min-height: 100%; */
+      height: 100vh;
+      padding: 55px;
+      overflow: hidden;
+      color: var(--white);
+      background:
+        linear-gradient(145deg, rgba(4, 21, 44, 0.95), rgba(8, 112, 79, 0.466)),
+        url("./images/corp_member.jpg")
+        center/cover;
+    }
+
+    .signup-intro::before,
+    .signup-intro::after {
+      position: absolute;
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      border-radius: 50%;
+      content: "";
+    }
+
+    .signup-intro::before {
+      top: -150px;
+      right: -130px;
+      width: 410px;
+      height: 410px;
+    }
+
+    .signup-intro::after {
+      bottom: -180px;
+      left: -135px;
+      width: 370px;
+      height: 370px;
+    }
+
+    .brand {
+      position: relative;
+      z-index: 1;
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      width: fit-content;
+      color: var(--white);
+      text-decoration: none;
+    }
+
+    .brand-mark, .brand-mark img{
+      /* display: grid;
+      width: 48px;
+      height: auto;
+      place-items: center;
+      border-radius: 50%;
+      color: var(--white);
+      background: var(--green);
+      font-family: "Manrope", sans-serif;
+      font-size: 1.25rem;
+      font-weight: 800; */
+      height:40px
+    }
+
+    .brand-text {
+      font-family: "Manrope", sans-serif;
+      font-size: 1rem;
+      font-weight: 800;
+    }
+
+    .brand-text small {
+      display: block;
+      color: rgba(255, 255, 255, 0.7);
+      font-family: "DM Sans", sans-serif;
+      font-size: 0.7rem;
+      font-weight: 500;
+    }
+
+    .intro-content {
+      position: relative;
+      z-index: 1;
+      max-width: 470px;
+      margin: 70px 0;
+    }
+
+    .intro-tag {
+      display: inline-flex;
+      gap: 8px;
+      align-items: center;
+      padding: 8px 13px;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.1);
+      color: rgba(255, 255, 255, 0.86);
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      backdrop-filter: blur(9px);
+    }
+
+    .intro-tag i {
+      color: #8ce0bc;
+    }
+
+    .intro-content h1 {
+      margin: 25px 0 18px;
+      font-size: clamp(2.5rem, 4vw, 4rem);
+      letter-spacing: -0.07em;
+      line-height: 1.08;
+    }
+
+    .intro-content h1 span {
+      color: #8ce0bc;
+    }
+
+    .intro-content p {
+      max-width: 410px;
+      color: rgba(255, 255, 255, 0.75);
+      line-height: 1.8;
+    }
+
+    .intro-points {
+      display: grid;
+      gap: 16px;
+      margin-top: 32px;
+    }
+
+    .intro-point {
+      display: flex;
+      align-items: center;
+      gap: 11px;
+      color: rgba(255, 255, 255, 0.85);
+      font-size: 0.86rem;
+    }
+
+    .intro-point i {
+      display: grid;
+      width: 28px;
+      height: 28px;
+      place-items: center;
+      border-radius: 8px;
+      color: var(--white);
+      background: rgba(255, 255, 255, 0.15);
+      font-size: 0.7rem;
+    }
+
+    .intro-footer {
+      position: relative;
+      z-index: 1;
+      color: rgba(255, 255, 255, 0.55);
+      font-size: 0.76rem;
+    }
+
+    /* Form panel */
+    .signup-form-area {
+      display: flex;
+      justify-content: center;
+      padding: 70px 35px;
+      background: var(--cream);
+      height: 100vh;
+      overflow-y: scroll;
+    }
+
+    .signup-form-wrap {
+      width: min(100%, 760px);
+    }
+
+    .form-heading {
+      margin-bottom: 32px;
+    }
+
+    .form-heading h2 {
+      margin-bottom: 10px;
+      color: var(--navy);
+      font-size: 2.15rem;
+      letter-spacing: -0.055em;
+    }
+
+    .form-heading p {
+      color: var(--muted);
+      line-height: 1.65;
+    }
+
+    .required-note {
+      margin-top: 10px;
+      color: var(--green-dark);
+      font-size: 0.8rem;
+      font-weight: 700;
+    }
+
+    .required-note span {
+      color: var(--danger);
+    }
+
+    .signup-form {
+      padding: 34px;
+      border: 1px solid rgba(20, 74, 130, 0.1);
+      border-radius: 24px;
+      background: var(--white);
+      box-shadow: var(--shadow);
+    }
+
+    .form-section {
+      margin-bottom: 30px;
+    }
+
+    .form-section:last-of-type {
+      margin-bottom: 0;
+    }
+
+    .form-section-title {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      margin-bottom: 20px;
+      padding-bottom: 13px;
+      border-bottom: 1px solid var(--border);
+      color: var(--navy);
+      font-family: "Manrope", sans-serif;
+      font-size: 1.05rem;
+      font-weight: 800;
+    }
+
+    .form-section-title i {
+      color: var(--green);
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+
+    .field {
+      min-width: 0;
+    }
+
+    .field.full {
+      grid-column: 1 / -1;
+    }
+
+    .field label {
+      display: block;
+      margin-bottom: 8px;
+      color: var(--navy);
+      font-size: 0.79rem;
+      font-weight: 800;
+    }
+
+    .field label .required {
+      color: var(--danger);
+    }
+
+    .input-wrap {
+      position: relative;
+    }
+
+    .input-wrap > i:first-child {
+      position: absolute;
+      z-index: 1;
+      top: 50%;
+      left: 14px;
+      color: var(--green);
+      font-size: 0.85rem;
+      transform: translateY(-50%);
+    }
+
+   
+    .input-wrap input,
+    .input-wrap select {
+      width: 100%;
+      height: 49px;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      outline: 0;
+      padding: 0 10px;
+      color: var(--ink);
+      background: var(--white);
+      font-family: inherit;
+      font-size: 0.89rem;
+      transition: border-color 0.25s ease, box-shadow 0.25s ease;
+    }
+     .input_pad{
+        padding: 0 42px !important;
+
+    }
+
+    .input-wrap select {
+      padding-right: 14px;
+      cursor: pointer;
+    }
+
+    .input-wrap input::placeholder {
+      color: #98a2b3;
+    }
+
+    .input-wrap input:focus,
+    .input-wrap select:focus {
+      border-color: var(--green);
+      box-shadow: 0 0 0 4px rgba(21, 150, 110, 0.11);
+    }
+
+    .input-wrap input:invalid:not(:placeholder-shown) {
+      border-color: var(--danger);
+    }
+
+    .input-wrap input:valid:not(:placeholder-shown) {
+      border-color: var(--green);
+    }
+
+    .password-toggle {
+      position: absolute;
+      top: 50%;
+      right: 13px;
+      z-index: 2;
+      border: 0;
+      color: var(--muted);
+      background: transparent;
+      cursor: pointer;
+      transform: translateY(-50%);
+    }
+
+    .help-text {
+      display: block;
+      margin-top: 7px;
+      color: var(--muted);
+      font-size: 0.72rem;
+      line-height: 1.5;
+    }
+
+    .state-code-hint {
+      margin-top: 7px;
+      color: var(--green-dark);
+      font-size: 0.72rem;
+      font-weight: 700;
+    }
+
+    .submit-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      width: 100%;
+      min-height: 53px;
+      margin-top: 30px;
+      border: 0;
+      border-radius: 13px;
+      color: var(--white);
+      background: var(--green);
+      box-shadow: 0 12px 24px rgba(21, 150, 110, 0.2);
+      cursor: pointer;
+      font-size: 0.9rem;
+      font-weight: 800;
+      transition: 0.3s ease;
+    }
+
+    .submit-btn:hover {
+      background: var(--green-dark);
+      box-shadow: 0 16px 28px rgba(8, 112, 79, 0.28);
+      transform: translateY(-3px);
+    }
+
+    .form-footer-text {
+      margin-top: 16px;
+      color: var(--muted);
+      font-size: 0.74rem;
+      line-height: 1.55;
+      text-align: center;
+    }
+
+    .form-footer-text a {
+      color: var(--green-dark);
+      font-weight: 800;
+      text-decoration: none;
+    }
+
+    /* Mobile */
+    @media (max-width: 980px) {
+      .signup-page {
+        grid-template-columns: 1fr;
+      }
+
+      .signup-intro {
+        min-height: auto;
+        padding: 38px 28px;
+      }
+
+      .intro-content {
+        margin: 45px 0;
+      }
+
+      .signup-form-area {
+        padding: 48px 22px;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .signup-intro {
+        padding: 28px 20px;
+      }
+
+      .intro-content h1 {
+        font-size: 2.45rem;
+      }
+
+      .signup-form-area {
+        padding: 38px 14px;
+      }
+
+      .signup-form {
+        padding: 23px 18px;
+        border-radius: 18px;
+      }
+
+      .form-heading h2 {
+        font-size: 1.85rem;
+      }
+
+      .form-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+      }
+
+      .field.full {
+        grid-column: auto;
+      }
+    }

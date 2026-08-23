@@ -1,0 +1,1404 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <meta
+    name="description"
+    content="Register your stay at NCCF House, Akwa Ibom State."
+  />
+
+  <title>Register Your Stay | NCCF Akwa Ibom State</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap"
+    rel="stylesheet"
+  />
+
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+  />
+
+  <style>
+    :root {
+      --navy: #061a35;
+      --navy-2: #092951;
+      --blue: #1261b1;
+      --green: #15966e;
+      --green-dark: #08704f;
+      --mint: #e6f6ef;
+      --cream: #f8fbff;
+      --white: #ffffff;
+      --ink: #10233e;
+      --muted: #667085;
+      --border: #d8e2ee;
+      --danger: #c93434;
+      --warning: #b76e00;
+      --shadow: 0 22px 65px rgba(6, 26, 53, 0.13);
+      --radius: 24px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      min-height: 100vh;
+      color: var(--ink);
+      background: var(--cream);
+      font-family: "DM Sans", sans-serif;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4 {
+      font-family: "Manrope", sans-serif;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button,
+    input,
+    select,
+    textarea {
+      font: inherit;
+    }
+
+    .page-shell {
+      min-height: 100vh;
+      background:
+        radial-gradient(circle at top left, rgba(21, 150, 110, 0.08), transparent 31rem),
+        radial-gradient(circle at top right, rgba(18, 97, 177, 0.1), transparent 28rem),
+        var(--cream);
+    }
+
+    /* Header */
+    .site-header {
+      padding: 22px 0;
+    }
+
+    .container {
+      width: min(1160px, calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    .navbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 15px 10px 11px;
+      border: 1px solid rgba(6, 26, 53, 0.08);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.82);
+      box-shadow: 0 10px 35px rgba(6, 26, 53, 0.06);
+      backdrop-filter: blur(16px);
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 11px;
+      color: var(--navy);
+    }
+
+    .brand-mark {
+      display: grid;
+      width: 45px;
+      height: 45px;
+      place-items: center;
+      border-radius: 50%;
+      color: var(--white);
+      background: var(--green);
+      font-family: "Manrope", sans-serif;
+      font-size: 1.15rem;
+      font-weight: 800;
+    }
+
+    .brand-copy {
+      font-family: "Manrope", sans-serif;
+      font-size: 0.92rem;
+      font-weight: 800;
+      line-height: 1.15;
+    }
+
+    .brand-copy small {
+      display: block;
+      margin-top: 3px;
+      color: var(--muted);
+      font-family: "DM Sans", sans-serif;
+      font-size: 0.68rem;
+      font-weight: 500;
+    }
+
+    .header-help {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--green-dark);
+      font-size: 0.8rem;
+      font-weight: 700;
+    }
+
+    .header-help i {
+      color: var(--green);
+    }
+
+    /* Hero */
+    .registration-hero {
+      padding: 58px 0 48px;
+      text-align: center;
+    }
+
+    .hero-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      padding: 8px 13px;
+      border: 1px solid rgba(21, 150, 110, 0.2);
+      border-radius: 999px;
+      color: var(--green-dark);
+      background: var(--mint);
+      font-size: 0.72rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .hero-tag i {
+      color: var(--green);
+    }
+
+    .registration-hero h1 {
+      max-width: 770px;
+      margin: 20px auto 15px;
+      color: var(--navy);
+      font-size: clamp(2.3rem, 5vw, 4.25rem);
+      letter-spacing: -0.075em;
+      line-height: 1.08;
+    }
+
+    .registration-hero h1 span {
+      color: var(--green);
+    }
+
+    .registration-hero > p {
+      max-width: 650px;
+      margin: 0 auto;
+      color: var(--muted);
+      font-size: 1.02rem;
+      line-height: 1.8;
+    }
+
+    .flow-steps {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      max-width: 810px;
+      margin: 35px auto 0;
+    }
+
+    .flow-step {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 15px;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      background: rgba(255, 255, 255, 0.78);
+      text-align: left;
+    }
+
+    .flow-step-number {
+      display: grid;
+      width: 31px;
+      height: 31px;
+      flex-shrink: 0;
+      place-items: center;
+      border-radius: 10px;
+      color: var(--white);
+      background: var(--green);
+      font-size: 0.76rem;
+      font-weight: 800;
+    }
+
+    .flow-step strong {
+      display: block;
+      margin-bottom: 3px;
+      color: var(--navy);
+      font-family: "Manrope", sans-serif;
+      font-size: 0.78rem;
+    }
+
+    .flow-step span {
+      color: var(--muted);
+      font-size: 0.72rem;
+      line-height: 1.35;
+    }
+
+    /* Main Registration Layout */
+    .registration-layout {
+      display: grid;
+      grid-template-columns: 0.72fr 1.28fr;
+      gap: 28px;
+      align-items: start;
+      padding-bottom: 75px;
+    }
+
+    .info-panel {
+      position: sticky;
+      top: 22px;
+      overflow: hidden;
+      border-radius: var(--radius);
+      color: var(--white);
+      background:
+        linear-gradient(155deg, rgba(6, 26, 53, 0.98), rgba(8, 112, 79, 0.9)),
+        url("https://images.unsplash.com/photo-1511632765486-a01980e01a18?auto=format&fit=crop&w=1000&q=85")
+        center/cover;
+      box-shadow: var(--shadow);
+    }
+
+    .info-panel-content {
+      position: relative;
+      z-index: 1;
+      padding: 35px;
+    }
+
+    .info-panel::after {
+      position: absolute;
+      right: -120px;
+      bottom: -130px;
+      width: 310px;
+      height: 310px;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 50%;
+      box-shadow: 0 0 0 42px rgba(255, 255, 255, 0.05);
+      content: "";
+    }
+
+    .info-panel-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: #91e5bf;
+      font-size: 0.69rem;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .info-panel h2 {
+      margin: 16px 0 14px;
+      font-size: 2rem;
+      letter-spacing: -0.06em;
+      line-height: 1.12;
+    }
+
+    .info-panel > div > p {
+      color: rgba(255, 255, 255, 0.74);
+      font-size: 0.9rem;
+      line-height: 1.8;
+    }
+
+    .info-list {
+      display: grid;
+      gap: 14px;
+      margin-top: 31px;
+    }
+
+    .info-list-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 11px;
+      color: rgba(255, 255, 255, 0.85);
+      font-size: 0.82rem;
+      line-height: 1.55;
+    }
+
+    .info-list-item i {
+      display: grid;
+      width: 27px;
+      height: 27px;
+      flex-shrink: 0;
+      place-items: center;
+      border-radius: 8px;
+      color: var(--navy);
+      background: #91e5bf;
+      font-size: 0.68rem;
+    }
+
+    .support-box {
+      margin-top: 34px;
+      padding: 16px;
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      border-radius: 15px;
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+    }
+
+    .support-box small {
+      display: block;
+      margin-bottom: 5px;
+      color: #91e5bf;
+      font-size: 0.68rem;
+      font-weight: 800;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    .support-box p {
+      color: rgba(255, 255, 255, 0.85) !important;
+      font-size: 0.8rem !important;
+      line-height: 1.55 !important;
+    }
+
+    /* Form */
+    .registration-card {
+      overflow: hidden;
+      border: 1px solid rgba(6, 26, 53, 0.09);
+      border-radius: var(--radius);
+      background: var(--white);
+      box-shadow: var(--shadow);
+    }
+
+    .registration-card-header {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 30px 34px 23px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .registration-card-header h2 {
+      margin-bottom: 8px;
+      color: var(--navy);
+      font-size: 1.5rem;
+      letter-spacing: -0.04em;
+    }
+
+    .registration-card-header p {
+      color: var(--muted);
+      font-size: 0.83rem;
+      line-height: 1.6;
+    }
+
+    .required-message {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      height: fit-content;
+      padding: 8px 10px;
+      border-radius: 9px;
+      color: var(--danger);
+      background: #fff0f0;
+      font-size: 0.7rem;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    .registration-form {
+      padding: 30px 34px 36px;
+    }
+
+    .form-section {
+      margin-bottom: 34px;
+    }
+
+    .form-section:last-of-type {
+      margin-bottom: 0;
+    }
+
+    .section-heading {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 20px;
+      padding-bottom: 13px;
+      border-bottom: 1px solid var(--border);
+      color: var(--navy);
+      font-family: "Manrope", sans-serif;
+      font-size: 1rem;
+      font-weight: 800;
+    }
+
+    .section-heading i {
+      color: var(--green);
+      font-size: 0.95rem;
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 19px;
+    }
+
+    .field {
+      min-width: 0;
+    }
+
+    .field.full {
+      grid-column: 1 / -1;
+    }
+
+    .field label {
+      display: block;
+      margin-bottom: 8px;
+      color: var(--navy);
+      font-size: 0.77rem;
+      font-weight: 800;
+    }
+
+    .required {
+      color: var(--danger);
+    }
+
+    .input-wrap {
+      position: relative;
+    }
+
+    .input-wrap > i {
+      position: absolute;
+      z-index: 1;
+      top: 50%;
+      left: 14px;
+      color: var(--green);
+      font-size: 0.84rem;
+      transform: translateY(-50%);
+    }
+
+    .input-wrap input,
+    .input-wrap select {
+      width: 100%;
+      height: 50px;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      outline: none;
+      padding: 0 14px 0 41px;
+      color: var(--ink);
+      background: var(--white);
+      font-family: inherit;
+      font-size: 0.88rem;
+      transition: 0.25s ease;
+    }
+
+    .input-wrap select {
+      cursor: pointer;
+    }
+
+    .input-wrap input::placeholder {
+      color: #98a2b3;
+    }
+
+    .input-wrap input:focus,
+    .input-wrap select:focus {
+      border-color: var(--green);
+      box-shadow: 0 0 0 4px rgba(21, 150, 110, 0.11);
+    }
+
+    .input-wrap input:invalid:not(:placeholder-shown) {
+      border-color: var(--danger);
+    }
+
+    .input-wrap input:valid:not(:placeholder-shown) {
+      border-color: var(--green);
+    }
+
+    .field-help {
+      display: block;
+      margin-top: 7px;
+      color: var(--muted);
+      font-size: 0.7rem;
+      line-height: 1.5;
+    }
+
+    .code-hint {
+      color: var(--green-dark);
+      font-weight: 700;
+    }
+
+    .duration-options {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+    }
+
+    .duration-option {
+      position: relative;
+    }
+
+    .duration-option input {
+      position: absolute;
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .duration-option label {
+      display: flex;
+      min-height: 78px;
+      align-items: center;
+      justify-content: center;
+      padding: 12px;
+      border: 1px solid var(--border);
+      border-radius: 13px;
+      color: var(--muted);
+      background: var(--white);
+      cursor: pointer;
+      font-size: 0.76rem;
+      font-weight: 700;
+      line-height: 1.35;
+      text-align: center;
+      transition: 0.25s ease;
+    }
+
+    .duration-option input:checked + label {
+      border-color: var(--green);
+      color: var(--green-dark);
+      background: var(--mint);
+      box-shadow: 0 0 0 3px rgba(21, 150, 110, 0.1);
+    }
+
+    .declaration {
+      display: flex;
+      align-items: flex-start;
+      gap: 11px;
+      margin-top: 31px;
+      padding: 16px;
+      border: 1px solid rgba(21, 150, 110, 0.18);
+      border-radius: 14px;
+      background: var(--mint);
+    }
+
+    .declaration input {
+      width: 17px;
+      height: 17px;
+      flex-shrink: 0;
+      margin-top: 2px;
+      accent-color: var(--green);
+      cursor: pointer;
+    }
+
+    .declaration label {
+      color: var(--green-dark);
+      font-size: 0.77rem;
+      font-weight: 600;
+      line-height: 1.6;
+      cursor: pointer;
+    }
+
+    .submit-btn {
+      display: flex;
+      width: 100%;
+      min-height: 54px;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 18px;
+      border: 0;
+      border-radius: 13px;
+      color: var(--white);
+      background: var(--green);
+      box-shadow: 0 13px 26px rgba(21, 150, 110, 0.23);
+      cursor: pointer;
+      font-size: 0.9rem;
+      font-weight: 800;
+      transition: 0.28s ease;
+    }
+
+    .submit-btn:hover {
+      background: var(--green-dark);
+      box-shadow: 0 17px 30px rgba(8, 112, 79, 0.27);
+      transform: translateY(-3px);
+    }
+
+    .privacy-note {
+      margin-top: 15px;
+      color: var(--muted);
+      font-size: 0.71rem;
+      line-height: 1.6;
+      text-align: center;
+    }
+
+    .privacy-note i {
+      color: var(--green);
+    }
+
+    /* Success Modal */
+    .success-overlay {
+      position: fixed;
+      z-index: 100;
+      inset: 0;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      background: rgba(6, 26, 53, 0.7);
+      backdrop-filter: blur(6px);
+    }
+
+    .success-overlay.active {
+      display: flex;
+    }
+
+    .success-card {
+      width: min(100%, 440px);
+      padding: 38px 30px;
+      border-radius: 24px;
+      background: var(--white);
+      box-shadow: 0 25px 80px rgba(0, 0, 0, 0.25);
+      animation: popIn 0.35s ease both;
+      text-align: center;
+    }
+
+    @keyframes popIn {
+      from {
+        opacity: 0;
+        transform: translateY(25px) scale(0.96);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+    }
+
+    .success-icon {
+      display: grid;
+      width: 68px;
+      height: 68px;
+      margin: 0 auto 18px;
+      place-items: center;
+      border-radius: 50%;
+      color: var(--white);
+      background: var(--green);
+      box-shadow: 0 12px 25px rgba(21, 150, 110, 0.25);
+      font-size: 1.7rem;
+    }
+
+    .success-card h2 {
+      margin-bottom: 11px;
+      color: var(--navy);
+      font-size: 1.7rem;
+      letter-spacing: -0.05em;
+    }
+
+    .success-card p {
+      color: var(--muted);
+      font-size: 0.9rem;
+      line-height: 1.7;
+    }
+
+    .success-card button {
+      width: 100%;
+      min-height: 48px;
+      margin-top: 24px;
+      border: 0;
+      border-radius: 12px;
+      color: var(--white);
+      background: var(--navy);
+      cursor: pointer;
+      font-weight: 800;
+    }
+
+    /* Footer */
+    footer {
+      padding: 28px 0;
+      color: rgba(255, 255, 255, 0.6);
+      background: var(--navy);
+      font-size: 0.76rem;
+      text-align: center;
+    }
+
+    footer strong {
+      color: var(--white);
+    }
+
+    @media (max-width: 980px) {
+      .registration-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .info-panel {
+        position: relative;
+        top: auto;
+      }
+    }
+
+    @media (max-width: 700px) {
+      .container {
+        width: min(100% - 28px, 1160px);
+      }
+
+      .site-header {
+        padding: 14px 0;
+      }
+
+      .header-help {
+        display: none;
+      }
+
+      .registration-hero {
+        padding: 42px 0 35px;
+      }
+
+      .flow-steps {
+        grid-template-columns: 1fr;
+      }
+
+      .registration-card-header,
+      .registration-form {
+        padding-right: 21px;
+        padding-left: 21px;
+      }
+
+      .registration-card-header {
+        flex-direction: column;
+      }
+
+      .required-message {
+        align-self: flex-start;
+      }
+
+      .form-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .field.full {
+        grid-column: auto;
+      }
+
+      .duration-options {
+        grid-template-columns: 1fr;
+      }
+
+      .duration-option label {
+        min-height: 50px;
+      }
+    }
+
+    @media (max-width: 430px) {
+      .brand-copy {
+        font-size: 0.8rem;
+      }
+
+      .registration-hero h1 {
+        font-size: 2.35rem;
+      }
+
+      .info-panel-content {
+        padding: 27px 23px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="page-shell">
+    <header class="site-header">
+      <div class="container">
+        <nav class="navbar">
+          <a class="brand" href="index.html" aria-label="NCCF Akwa Ibom homepage">
+            <div class="brand-mark">N</div>
+
+            <div class="brand-copy">
+              NCCF House
+              <small>Akwa Ibom State</small>
+            </div>
+          </a>
+
+          <a class="header-help" href="tel:[INSERT_PHONE_NUMBER]">
+            <i class="fa-solid fa-circle-question"></i>
+            Need help? Contact the House Admin
+          </a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="registration-hero">
+        <div class="container">
+          <div class="hero-tag">
+            <i class="fa-solid fa-house"></i>
+            NCCF House Resident Registration
+          </div>
+
+          <h1>
+            Register your <span>stay</span><br />
+            at NCCF House.
+          </h1>
+
+          <p>
+            Welcome. Complete this form to register as a resident. You do not
+            need to create an account or remember a password. The House
+            Administration will review and activate your record.
+          </p>
+
+          <div class="flow-steps">
+            <div class="flow-step">
+              <div class="flow-step-number">1</div>
+              <div>
+                <strong>Complete the form</strong>
+                <span>Provide your correct residence details.</span>
+              </div>
+            </div>
+
+            <div class="flow-step">
+              <div class="flow-step-number">2</div>
+              <div>
+                <strong>Admin review</strong>
+                <span>House officials verify your registration.</span>
+              </div>
+            </div>
+
+            <div class="flow-step">
+              <div class="flow-step-number">3</div>
+              <div>
+                <strong>Stay connected</strong>
+                <span>Your residence and payment record are managed.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="container registration-layout">
+        <aside class="info-panel">
+          <div class="info-panel-content">
+            <div class="info-panel-label">
+              <i class="fa-solid fa-heart"></i>
+              A home of faith and family
+            </div>
+
+            <h2>We are glad you are here.</h2>
+
+            <p>
+              This registration helps NCCF House serve you better, maintain
+              accurate house records, and plan welfare and accommodation
+              support.
+            </p>
+
+            <div class="info-list">
+              <div class="info-list-item">
+                <i class="fa-solid fa-circle-check"></i>
+                <span>
+                  Your submitted details will be reviewed by authorized House
+                  Administration officials.
+                </span>
+              </div>
+
+              <div class="info-list-item">
+                <i class="fa-solid fa-circle-check"></i>
+                <span>
+                  Monthly house payments are confirmed from the official bank
+                  account by an admin.
+                </span>
+              </div>
+
+              <div class="info-list-item">
+                <i class="fa-solid fa-circle-check"></i>
+                <span>
+                  Notify the House Administration when you plan to leave so
+                  your residence status can be updated.
+                </span>
+              </div>
+            </div>
+
+            <div class="support-box">
+              <small>Important</small>
+              <p>
+                Please provide accurate contact and next-of-kin details. These
+                records may be needed for welfare and emergency support.
+              </p>
+            </div>
+          </div>
+        </aside>
+
+        <section class="registration-card">
+          <header class="registration-card-header">
+            <div>
+              <h2>Resident Registration Form</h2>
+              <p>
+                Fields marked with <span class="required">*</span> are required.
+              </p>
+            </div>
+
+            <span class="required-message">
+              <i class="fa-solid fa-asterisk"></i>
+              All fields required
+            </span>
+          </header>
+
+          <form class="registration-form" id="residentRegistrationForm">
+            <!-- Personal details -->
+            <section class="form-section">
+              <h3 class="section-heading">
+                <i class="fa-solid fa-user"></i>
+                Personal details
+              </h3>
+
+              <div class="form-grid">
+                <div class="field full">
+                  <label for="fullName">
+                    Full Name <span class="required">*</span>
+                  </label>
+
+                  <div class="input-wrap">
+                    <i class="fa-solid fa-user"></i>
+                    <input
+                      id="fullName"
+                      name="fullName"
+                      type="text"
+                      placeholder="Enter your full name"
+                      autocomplete="name"
+                      required
+                    />
+                  </div>
+                </div>
+
+                <div class="field">
+                  <label for="phone">
+                    Phone Number <span class="required">*</span>
+                  </label>
+
+                  <div class="input-wrap">
+                    <i class="fa-solid fa-phone"></i>
+                    <input
+                      id="phone"
+                      name="phone"
+                      type="tel"
+                      placeholder="08012345678"
+                      autocomplete="tel"
+                      inputmode="tel"
+                      pattern="(?:\+234|234|0)[789][01]\d{8}"
+                      title="Enter a valid Nigerian phone number, for example 08012345678."
+                      required
+                    />
+                  </div>
+
+                  <small class="field-help">
+                    Example: 08012345678 or +2348012345678
+                  </small>
+                </div>
+
+                <div class="field">
+                  <label for="email">
+                    Email Address <span class="required">*</span>
+                  </label>
+
+                  <div class="input-wrap">
+                    <i class="fa-solid fa-envelope"></i>
+                    <input
+                      id="email"
+                      name="email"
+                      type="email"
+                      placeholder="you@example.com"
+                      autocomplete="email"
+                      required
+                    />
+                  </div>
+                </div>
+
+                <div class="field">
+                  <label for="stateCode">
+                    NYSC State Code <span class="required">*</span>
+                  </label>
+
+                  <div class="input-wrap">
+                    <i class="fa-solid fa-id-card"></i>
+                    <input
+                      id="stateCode"
+                      name="stateCode"
+                      type="text"
+                      placeholder="AK/25B/1371"
+                      maxlength="11"
+                      autocapitalize="characters"
+                      pattern="AK\/(?:25|26)[ABC]\/\d{4}"
+                      title="Use the format AK/25B/1371."
+                      required
+                    />
+                  </div>
+
+                  <small class="field-help code-hint">
+                    Required format: AK/25B/1371
+                  </small>
+                </div>
+
+                <div class="field">
+                  <label for="stateOfOrigin">
+                    State of Origin <span class="required">*</span>
+                  </label>
+
+                  <div class="input-wrap">
+                    <i class="fa-solid fa-map-location-dot"></i>
+
+                    <select id="stateOfOrigin" name="stateOfOrigin" required>
+                      <option value="" selected disabled>Select your state</option>
+                      <option value="Abia">Abia</option>
+                      <option value="Adamawa">Adamawa</option>
+                      <option value="Akwa Ibom">Akwa Ibom</option>
+                      <option value="Anambra">Anambra</option>
+                      <option value="Bauchi">Bauchi</option>
+                      <option value="Bayelsa">Bayelsa</option>
+                      <option value="Benue">Benue</option>
+                      <option value="Borno">Borno</option>
+                      <option value="Cross River">Cross River</option>
+                      <option value="Delta">Delta</option>
+                      <option value="Ebonyi">Ebonyi</option>
+                      <option value="Edo">Edo</option>
+                      <option value="Ekiti">Ekiti</option>
+                      <option value="Enugu">Enugu</option>
+                      <option value="Federal Capital Territory">Federal Capital Territory</option>
+                      <option value="Gombe">Gombe</option>
+                      <option value="Imo">Imo</option>
+                      <option value="Jigawa">Jigawa</option>
+                      <option value="Kaduna">Kaduna</option>
+                      <option value="Kano">Kano</option>
+                      <option value="Katsina">Katsina</option>
+                      <option value="Kebbi">Kebbi</option>
+                      <option value="Kogi">Kogi</option>
+                      <option value="Kwara">Kwara</option>
+                      <option value="Lagos">Lagos</option>
+                      <option value="Nasarawa">Nasarawa</option>
+                      <option value="Niger">Niger</option>
+                      <option value="Ogun">Ogun</option>
+                      <option value="Ondo">Ondo</option>
+                      <option value="Osun">Osun</option>
+                      <option value="Oyo">Oyo</option>
+                      <option value="Plateau">Plateau</option>
+                      <option value="Rivers">Rivers</option>
+                      <option value="Sokoto">Sokoto</option>
+                      <option value="Taraba">Taraba</option>
+                      <option value="Yobe">Yobe</option>
+                      <option value="Zamfara">Zamfara</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div class="field">
+                  <label for="dob">
+                    Date of Birth <span class="required">*</span>
+                  </label>
+
+                  <div class="input-wrap">
+                    <i class="fa-solid fa-calendar-days"></i>
+                    <input
+                      id="dob"
+                      name="dob"
+                      type="date"
+                      autocomplete="bday"
+                      required
+                    />
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <!-- Service and stay details -->
+            <section class="form-section">
+              <h3 class="section-heading">
+                <i class="fa-solid fa-building"></i>
+                Service and stay details
+              </h3>
+
+              <div class="form-grid">
+                <div class="field full">
+                  <label for="ppa">
+                    Primary Place of Assignment <span class="required">*</span>
+                  </label>
+
+                  <div class="input-wrap">
+                    <i class="fa-solid fa-briefcase"></i>
+                    <input
+                      id="ppa"
+                      name="ppa"
+                      type="text"
+                      placeholder="Enter the name of your PPA"
+                      autocomplete="organization"
+                      required
+                    />
+                  </div>
+                </div>
+
+                <div class="field full">
+                  <label>
+                    Expected Duration of Stay <span class="required">*</span>
+                  </label>
+
+                  <div class="duration-options">
+                    <div class="duration-option">
+                      <input
+                        id="durationShort"
+                        name="durationOfStay"
+                        value="1 to 3 months"
+                        type="radio"
+                        required
+                      />
+                      <label for="durationShort">1–3 months</label>
+                    </div>
+
+                    <div class="duration-option">
+                      <input
+                        id="durationMedium"
+                        name="durationOfStay"
+                        value="4 to 6 months"
+                        type="radio"
+                        required
+                      />
+                      <label for="durationMedium">4–6 months</label>
+                    </div>
+
+                    <div class="duration-option">
+                      <input
+                        id="durationLong"
+                        name="durationOfStay"
+                        value="More than 6 months"
+                        type="radio"
+                        required
+                      />
+                      <label for="durationLong">More than 6 months</label>
+                    </div>
+                  </div>
+
+                  <small class="field-help">
+                    This helps the House Administration plan accommodation and
+                    welfare support.
+                  </small>
+                </div>
+              </div>
+            </section>
+
+            <!-- Next of kin -->
+            <section class="form-section">
+              <h3 class="section-heading">
+                <i class="fa-solid fa-people-roof"></i>
+                Next-of-kin details
+              </h3>
+
+              <div class="form-grid">
+                <div class="field">
+                  <label for="nextOfKinName">
+                    Next-of-Kin Full Name <span class="required">*</span>
+                  </label>
+
+                  <div class="input-wrap">
+                    <i class="fa-solid fa-user-group"></i>
+                    <input
+                      id="nextOfKinName"
+                      name="nextOfKinName"
+                      type="text"
+                      placeholder="Enter next-of-kin name"
+                      required
+                    />
+                  </div>
+                </div>
+
+                <div class="field">
+                  <label for="nextOfKinPhone">
+                    Next-of-Kin Phone Number <span class="required">*</span>
+                  </label>
+
+                  <div class="input-wrap">
+                    <i class="fa-solid fa-phone-volume"></i>
+                    <input
+                      id="nextOfKinPhone"
+                      name="nextOfKinPhone"
+                      type="tel"
+                      placeholder="08012345678"
+                      inputmode="tel"
+                      pattern="(?:\+234|234|0)[789][01]\d{8}"
+                      title="Enter a valid Nigerian phone number."
+                      required
+                    />
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <!-- Confirmation -->
+            <div class="declaration">
+              <input id="declaration" type="checkbox" required />
+
+              <label for="declaration">
+                I confirm that the information provided is accurate. I
+                understand that NCCF House will use these details for residence,
+                welfare, emergency contact, and administrative purposes.
+              </label>
+            </div>
+
+            <button class="submit-btn" type="submit">
+              Submit Resident Registration
+              <i class="fa-solid fa-arrow-right"></i>
+            </button>
+
+            <p class="privacy-note">
+              <i class="fa-solid fa-lock"></i>
+              Your information is handled by authorized NCCF House
+              Administration officials.
+            </p>
+          </form>
+        </section>
+      </section>
+    </main>
+
+    <footer>
+      <div class="container">
+        <strong>NCCF House, Akwa Ibom State</strong> · Resident Registration
+        System · © 2026
+      </div>
+    </footer>
+  </div>
+
+  <!-- Success state -->
+  <div
+    class="success-overlay"
+    id="successOverlay"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="successTitle"
+  >
+    <div class="success-card">
+      <div class="success-icon">
+        <i class="fa-solid fa-check"></i>
+      </div>
+
+      <h2 id="successTitle">Registration received</h2>
+
+      <p>
+        Thank you for registering your stay at NCCF House. The House
+        Administration will review your details and update your resident status.
+      </p>
+
+      <button id="closeSuccess" type="button">
+        Done
+      </button>
+    </div>
+  </div>
+
+  <script>
+    const residentForm = document.querySelector("#residentRegistrationForm");
+    const stateCodeInput = document.querySelector("#stateCode");
+    const successOverlay = document.querySelector("#successOverlay");
+    const closeSuccessButton = document.querySelector("#closeSuccess");
+    const submitButton = residentForm.querySelector(".submit-btn");
+
+    const stateCodePattern = /^AK\/(?:25|26)[ABC]\/\d{4}$/;
+    const phonePattern = /^(?:\+234|234|0)[789][01]\d{8}$/;
+
+    stateCodeInput.addEventListener("input", (event) => {
+      event.target.value = event.target.value.toUpperCase();
+    });
+
+    residentForm.addEventListener("submit", async (event) => {
+      event.preventDefault();
+
+      if (!residentForm.checkValidity()) {
+        residentForm.reportValidity();
+        return;
+      }
+
+      const stateCode = stateCodeInput.value.trim().toUpperCase();
+      const phone = document.querySelector("#phone").value.trim();
+      const nextOfKinPhone = document.querySelector("#nextOfKinPhone").value.trim();
+
+      if (!stateCodePattern.test(stateCode)) {
+        alert("Use a valid NYSC state code format, for example AK/25B/1371.");
+        stateCodeInput.focus();
+        return;
+      }
+
+      if (!phonePattern.test(phone)) {
+        alert("Enter a valid Nigerian phone number.");
+        document.querySelector("#phone").focus();
+        return;
+      }
+
+      if (!phonePattern.test(nextOfKinPhone)) {
+        alert("Enter a valid next-of-kin phone number.");
+        document.querySelector("#nextOfKinPhone").focus();
+        return;
+      }
+
+      const formData = {
+        fullName: document.querySelector("#fullName").value.trim(),
+        phone,
+        email: document.querySelector("#email").value.trim().toLowerCase(),
+        stateCode,
+        stateOfOrigin: document.querySelector("#stateOfOrigin").value,
+        dateOfBirth: document.querySelector("#dob").value,
+        ppa: document.querySelector("#ppa").value.trim(),
+        durationOfStay: document.querySelector(
+          'input[name="durationOfStay"]:checked'
+        ).value,
+        nextOfKinName: document.querySelector("#nextOfKinName").value.trim(),
+        nextOfKinPhone
+      };
+
+      console.log("Resident registration:", formData);
+
+      /*
+        CONNECT SUPABASE HERE:
+
+        1. Send formData to a protected server endpoint or Supabase Edge Function.
+        2. Do NOT allow anonymous browser code direct access to other resident data.
+        3. The server should create a new resident record with:
+           resident_status: "pending_review"
+           date_registered: current date
+
+        Example expected backend payload:
+        {
+          full_name: formData.fullName,
+          phone: formData.phone,
+          email: formData.email,
+          state_code: formData.stateCode,
+          state_of_origin: formData.stateOfOrigin,
+          date_of_birth: formData.dateOfBirth,
+          ppa: formData.ppa,
+          duration_of_stay: formData.durationOfStay,
+          next_of_kin_name: formData.nextOfKinName,
+          next_of_kin_phone: formData.nextOfKinPhone,
+          resident_status: "pending_review"
+        }
+      */
+
+      const initialText = submitButton.innerHTML;
+      submitButton.disabled = true;
+      submitButton.innerHTML =
+        'Submitting registration <i class="fa-solid fa-spinner fa-spin"></i>';
+
+      // Replace this delay with your real Supabase/Edge Function request.
+      await new Promise((resolve) => setTimeout(resolve, 900));
+
+      submitButton.disabled = false;
+      submitButton.innerHTML = initialText;
+
+      residentForm.reset();
+      successOverlay.classList.add("active");
+    });
+
+    closeSuccessButton.addEventListener("click", () => {
+      successOverlay.classList.remove("active");
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+
+    successOverlay.addEventListener("click", (event) => {
+      if (event.target === successOverlay) {
+        successOverlay.classList.remove("active");
+      }
+    });
+  </script>
+</body>
+</html>

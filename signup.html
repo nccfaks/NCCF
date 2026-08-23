@@ -18,7 +18,7 @@
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
   />
-  <link rel="stylesheet" href="signup.css" />
+  <link rel="stylesheet" href="css/signup.css" />
  
 </head>
 
@@ -48,24 +48,22 @@
         </h1>
 
         <p>
-          Create your profile and become part of a Christ-centred community
-          growing in faith, friendship, discipleship, and service.
+          Complete this form to register as a resident and become part of a Christ-centred community
+          growing in faith, friendship, discipleship, and service. 
+          You do not need to create an account or remember a password
         </p>
 
         <div class="intro-points">
           <div class="intro-point">
             <i class="fa-solid fa-check"></i>
-            Connect with fellow Christian corps members.
+            This registration helps NCCF House serve you better, maintain accurate house records, 
+            and plan welfare and accommodation support.
           </div>
 
           <div class="intro-point">
             <i class="fa-solid fa-check"></i>
-            Receive fellowship updates and information.
-          </div>
-
-          <div class="intro-point">
-            <i class="fa-solid fa-check"></i>
-            Find opportunities to serve and grow spiritually.
+            Please provide accurate contact and next-of-kin details. 
+            These records may be needed for welfare and emergency support.
           </div>
         </div>
       </div>
@@ -76,9 +74,22 @@
     </aside>
 
     <section class="signup-form-area">
+      <!-- <div class="success-overlay" id="successOverlay">
+        <div class="success-card">
+          <h2>Registration received</h2>
+
+          <p>
+            Your resident registration has been submitted successfully.
+          </p>
+
+          <button id="closeSuccess" type="button">
+            Done
+          </button>
+        </div>
+      </div> -->
       <div class="signup-form-wrap">
         <header class="form-heading">
-          <h2>Create your account</h2>
+          <h2>Register your stay at NCCF House.</h2>
           <p>
             Please complete the form below. Your information helps NCCF serve
             and connect with you effectively.
@@ -88,7 +99,7 @@
           </div>
         </header>
 
-        <form class="signup-form" id="signupForm" novalidate>
+        <form class="signup-form" id="residentRegistrationForm" novalidate>
           <!-- Personal Details -->
           <section class="form-section">
             <h3 class="form-section-title">
@@ -174,7 +185,7 @@
                     autocomplete="off"
                     autocapitalize="characters"
                     maxlength="11"
-                    pattern="AK\/(?:25|26)[ABC]\/\d{4}"
+                    pattern="AK\/\d{2}[ABC]\/\d{4}"
                     title="Use this exact format: AK/25A/1371, AK/25B/1371, AK/25C/1371, AK/26A/1371, AK/26B/1371, or AK/26C/1371."
                     required
                   />
@@ -347,7 +358,7 @@
           </section>
 
           <!-- Account Security -->
-          <section class="form-section">
+          <!-- <section class="form-section">
             <h3 class="form-section-title">
               Account security
             </h3>
@@ -388,72 +399,78 @@
                 </small>
               </div>
             </div>
-          </section>
+          </section> -->
+
+          <p class="form-footer-text ">
+            <input id="declaration" type="checkbox" required />
+            By registering, you agree that NCCF Akwa Ibom State may use your
+            information for fellowship communication and administration.
+          </p>
 
           <button class="submit-btn" type="submit">
             Create My Account
             <i class="fa-solid fa-arrow-right"></i>
           </button>
 
-          <p class="form-footer-text">
-            By registering, you agree that NCCF Akwa Ibom State may use your
-            information for fellowship communication and administration.
-          </p>
+         
         </form>
       </div>
     </section>
   </main>
+  <!-- Registration Success Modal -->
+  <div
+    class="success-overlay"
+    id="successOverlay"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="successTitle"
+    aria-describedby="successMessage"
+    aria-hidden="true"
+  >
+    <section class="success-card">
+      <div class="success-decoration decoration-one"></div>
+      <div class="success-decoration decoration-two"></div>
 
-  <script>
-    const signupForm = document.querySelector("#signupForm");
-    const stateCodeInput = document.querySelector("#stateCode");
-    const passwordInput = document.querySelector("#password");
-    const passwordToggle = document.querySelector("#passwordToggle");
+      <div class="success-icon-wrap">
+        <div class="success-icon">
+          <i class="fa-solid fa-check"></i>
+        </div>
+      </div>
 
-    // Automatically capitalize the State Code as the user types.
-    stateCodeInput.addEventListener("input", (event) => {
-      event.target.value = event.target.value.toUpperCase();
-    });
+      <span class="success-eyebrow">
+        <i class="fa-solid fa-circle-check"></i>
+        Registration Complete
+      </span>
 
-    // Toggle password visibility.
-    passwordToggle.addEventListener("click", () => {
-      const isPassword = passwordInput.type === "password";
+      <h2 id="successTitle">Welcome to NCCF House!</h2>
 
-      passwordInput.type = isPassword ? "text" : "password";
-      passwordToggle.innerHTML = isPassword
-        ? '<i class="fa-regular fa-eye-slash"></i>'
-        : '<i class="fa-regular fa-eye"></i>';
+      <p id="successMessage">
+        Your resident registration has been submitted successfully. Your details
+        are now in the NCCF House register.
+      </p>
 
-      passwordToggle.setAttribute(
-        "aria-label",
-        isPassword ? "Hide password" : "Show password"
-      );
-    });
+      <div class="success-info-box">
+        <i class="fa-solid fa-circle-info"></i>
 
-    signupForm.addEventListener("submit", (event) => {
-      event.preventDefault();
+        <span>
+          Please notify the House Administration whenever you are leaving the
+          house so your residence record can be updated.
+        </span>
+      </div>
 
-      if (!signupForm.checkValidity()) {
-        signupForm.reportValidity();
-        return;
-      }
+      <button class="success-close-btn" id="closeSuccess" type="button">
+        Done
+        <i class="fa-solid fa-arrow-right"></i>
+      </button>
+    </section>
+  </div>
+  <!-- 1. Load Supabase JavaScript library from CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
-      const submitButton = signupForm.querySelector(".submit-btn");
-      const originalText = submitButton.innerHTML;
+  <!-- 2. Create your Supabase client -->
+  <script src="./js/supabase-client.js"></script>
 
-      submitButton.innerHTML =
-        '<i class="fa-solid fa-check"></i> Registration Successful';
-      submitButton.style.background = "#08704f";
-
-      // Connect this point to your API/backend before deploying.
-      // Example: fetch("/api/register", { method: "POST", body: new FormData(signupForm) })
-
-      setTimeout(() => {
-        submitButton.innerHTML = originalText;
-        submitButton.style.background = "";
-        signupForm.reset();
-      }, 3000);
-    });
-  </script>
-</body>
+  <!-- 3. Handle your registration form -->
+  <script src="./js/register-resident.js"></script>
+ </body>
 </html>

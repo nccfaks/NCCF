@@ -81,18 +81,30 @@
 
     statsObserver.observe(statsSection);
 
-    document.querySelectorAll(".copy").forEach((button) => {
-      button.addEventListener("click", async () => {
-        await navigator.clipboard.writeText(button.dataset.copy);
+  document.querySelectorAll(".copy").forEach((button) => {
+    button.addEventListener("click", async () => {
+      const textToCopy = button.dataset.copy;
+
+      if (!textToCopy) return;
+
+      try {
+        await navigator.clipboard.writeText(textToCopy);
 
         const original = button.innerHTML;
+
         button.innerHTML = '<i class="fa-solid fa-check"></i>';
+        button.setAttribute("aria-label", "Copied");
 
         setTimeout(() => {
           button.innerHTML = original;
+          button.setAttribute("aria-label", "Copy account detail");
         }, 1600);
-      });
+      } catch (error) {
+        console.error("Could not copy text:", error);
+        alert("Could not copy automatically. Please copy it manually.");
+      }
     });
+  });
 
     document.querySelector("#contactForm").addEventListener("submit", (event) => {
       event.preventDefault();

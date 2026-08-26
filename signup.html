@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -11,23 +12,49 @@
 
   <link
     href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap"
-    rel="stylesheet"
-  />
+    rel="stylesheet" />
 
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
-  />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
   <link rel="stylesheet" href="css/signup.css" />
- 
+
 </head>
 
 <body>
+  <header class="site-header d-none" id="header">
+    <div class="container">
+      <nav class="nav">
+        <a class="brand" href="#home">
+          <div class="brand-mark">
+            <img src="./images/nccf_logo.png" />
+          </div>
+          <div class="brand-copy">
+            NCCF
+            <small>Akwa Ibom State</small>
+          </div>
+        </a>
+        <button class="menu-toggle" id="menuToggle" aria-label="Open navigation">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </nav>
+    </div>
+  </header>
+  <div class="mobile-navigation" id="mobileNavigation">
+    <button id="closeNavigation" aria-label="Close navigation">
+      <i class="fa-solid fa-xmark"></i>
+    </button>
+
+    <a href="/">Home</a>
+    <a href="/#about">Who We Are</a>
+    <a href="/#services">Fellowship</a>
+    <a href="/#partner">Partner</a>
+    <a href="/#contact">Contact</a>
+
+  </div>
   <main class="signup-page">
     <aside class="signup-intro">
-      <a class="brand" href="index.html" aria-label="NCCF Akwa Ibom homepage">
+      <a class="brand d-small-none" href="index.html" aria-label="NCCF Akwa Ibom homepage">
         <div class="brand-mark">
-            <img src="./images/nccf_logo.png" />
+          <img src="./images/nccf_logo.png" />
         </div>
 
         <div class="brand-text">
@@ -49,20 +76,20 @@
 
         <p>
           Complete this form to register as a resident and become part of a Christ-centred community
-          growing in faith, friendship, discipleship, and service. 
+          growing in faith, friendship, discipleship, and service.
           You do not need to create an account or remember a password
         </p>
 
         <div class="intro-points">
           <div class="intro-point">
             <i class="fa-solid fa-check"></i>
-            This registration helps NCCF House serve you better, maintain accurate house records, 
+            This registration helps NCCF House serve you better, maintain accurate house records,
             and plan welfare and accommodation support.
           </div>
 
           <div class="intro-point">
             <i class="fa-solid fa-check"></i>
-            Please provide accurate contact and next-of-kin details. 
+            Please provide accurate contact and next-of-kin details.
             These records may be needed for welfare and emergency support.
           </div>
         </div>
@@ -115,15 +142,8 @@
 
                 <div class="input-wrap">
                   <i class="fa-solid fa-user"></i>
-                  <input 
-                    class="input_pad"
-                    id="fullName"
-                    name="fullName"
-                    type="text"
-                    placeholder="Enter your full name"
-                    autocomplete="name"
-                    required
-                  />
+                  <input class="input_pad" id="fullName" name="fullName" type="text" placeholder="Enter your full name"
+                    autocomplete="name" required />
                 </div>
               </div>
 
@@ -134,15 +154,8 @@
 
                 <div class="input-wrap">
                   <i class="fa-solid fa-envelope"></i>
-                  <input
-                    id="email"
-                    name="email"
-                    type="email"
-                    placeholder="you@example.com"
-                    autocomplete="email"
-                    required
-                    class="input_pad"
-                  />
+                  <input id="email" name="email" type="email" placeholder="you@example.com" autocomplete="email"
+                    required class="input_pad" />
                 </div>
               </div>
 
@@ -153,18 +166,10 @@
 
                 <div class="input-wrap">
                   <i class="fa-solid fa-phone"></i>
-                  <input
-                    id="phone"
-                    name="phone"
-                    type="tel"
-                    placeholder="08012345678"
-                    autocomplete="tel"
-                    inputmode="tel"
+                  <input id="phone" name="phone" type="tel" placeholder="08012345678" autocomplete="tel" inputmode="tel"
                     pattern="(?:\+234|234|0)[789][01]\d{8}"
-                    title="Enter a valid Nigerian phone number, for example 08012345678 or +2348012345678."
-                    required
-                    class="input_pad"
-                  />
+                    title="Enter a valid Nigerian phone number, for example 08012345678 or +2348012345678." required
+                    class="input_pad" />
                 </div>
 
                 <small class="help-text">
@@ -177,18 +182,10 @@
                   State Code <span class="required">*</span>
                 </label>
                 <div class="input-wrap">
-                  <input
-                    id="stateCode"
-                    name="stateCode"
-                    type="text"
-                    placeholder="AK/25B/1371"
-                    autocomplete="off"
-                    autocapitalize="characters"
-                    maxlength="11"
-                    pattern="AK\/\d{2}[ABC]\/\d{4}"
+                  <input id="stateCode" name="stateCode" type="text" placeholder="AK/25B/1371" autocomplete="off"
+                    autocapitalize="characters" maxlength="11" pattern="AK\/\d{2}[ABC]\/\d{4}"
                     title="Use this exact format: AK/25A/1371, AK/25B/1371, AK/25C/1371, AK/26A/1371, AK/26B/1371, or AK/26C/1371."
-                    required
-                  />
+                    required />
                 </div>
 
                 <small class="state-code-hint">
@@ -252,13 +249,7 @@
                 </label>
 
                 <div class="input-wrap">
-                  <input
-                    id="dob"
-                    name="dob"
-                    type="date"
-                    autocomplete="bday"
-                    required
-                  />
+                  <input id="dob" name="dob" type="date" autocomplete="bday" required />
                 </div>
               </div>
             </div>
@@ -277,14 +268,8 @@
                 </label>
 
                 <div class="input-wrap">
-                  <input
-                    id="ppa"
-                    name="ppa"
-                    type="text"
-                    placeholder="Enter your PPA name"
-                    autocomplete="organization"
-                    required
-                  />
+                  <input id="ppa" name="ppa" type="text" placeholder="Enter your PPA name" autocomplete="organization"
+                    required />
                 </div>
               </div>
 
@@ -324,14 +309,8 @@
                 </label>
 
                 <div class="input-wrap">
-                  <input
-                    id="nextOfKinName"
-                    name="nextOfKinName"
-                    type="text"
-                    placeholder="Enter next of kin's name"
-                    autocomplete="off"
-                    required
-                  />
+                  <input id="nextOfKinName" name="nextOfKinName" type="text" placeholder="Enter next of kin's name"
+                    autocomplete="off" required />
                 </div>
               </div>
 
@@ -341,17 +320,9 @@
                 </label>
 
                 <div class="input-wrap">
-                  <input
-                    id="nextOfKinPhone"
-                    name="nextOfKinPhone"
-                    type="tel"
-                    placeholder="08012345678"
-                    autocomplete="tel"
-                    inputmode="tel"
-                    pattern="(?:\+234|234|0)[789][01]\d{8}"
-                    title="Enter a valid Nigerian phone number, for example 08012345678 or +2348012345678."
-                    required
-                  />
+                  <input id="nextOfKinPhone" name="nextOfKinPhone" type="tel" placeholder="08012345678"
+                    autocomplete="tel" inputmode="tel" pattern="(?:\+234|234|0)[789][01]\d{8}"
+                    title="Enter a valid Nigerian phone number, for example 08012345678 or +2348012345678." required />
                 </div>
               </div>
             </div>
@@ -412,21 +383,14 @@
             <i class="fa-solid fa-arrow-right"></i>
           </button>
 
-         
+
         </form>
       </div>
     </section>
   </main>
   <!-- Registration Success Modal -->
-  <div
-    class="success-overlay"
-    id="successOverlay"
-    role="dialog"
-    aria-modal="true"
-    aria-labelledby="successTitle"
-    aria-describedby="successMessage"
-    aria-hidden="true"
-  >
+  <div class="success-overlay" id="successOverlay" role="dialog" aria-modal="true" aria-labelledby="successTitle"
+    aria-describedby="successMessage" aria-hidden="true">
     <section class="success-card">
       <div class="success-decoration decoration-one"></div>
       <div class="success-decoration decoration-two"></div>
@@ -472,5 +436,8 @@
 
   <!-- 3. Handle your registration form -->
   <script src="./js/register-resident.js"></script>
- </body>
+  <script src="js/script.js"></script>
+
+</body>
+
 </html>
